@@ -1,6 +1,6 @@
 [submodule "server"]
 	path = server
-	url = https://github.com/Euro-Office/server.git
+	url = https://github.com/hoaminhit/server.git
 [submodule "web-apps"]
 	path = web-apps
 	url = https://github.com/Euro-Office/web-apps.git

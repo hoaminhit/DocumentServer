@@ -26,7 +26,7 @@ on:
         type: string
 
 env:
-  REGISTRY: ghcr.io/euro-office
+  REGISTRY: ghcr.io/${{ github.repository_owner }}
   IMAGE_NAME: documentserver
   CLUSTER_IMG_DOCS: cluster-docs
   CLUSTER_IMG_EXAMPLE: cluster-example
@@ -50,14 +50,14 @@ jobs:
         with:
           path: .
           submodules: recursive
-          token: ${{ secrets.EURO_OFFICE_MIRROR_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Checkout nextcloud-office-brand repo
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           repository: Euro-Office/nextcloud-office-brand
           path: build/brands/nextcloud-office-brand
-          token: ${{ secrets.EURO_OFFICE_MIRROR_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Align submodules to requested branches
         shell: bash
